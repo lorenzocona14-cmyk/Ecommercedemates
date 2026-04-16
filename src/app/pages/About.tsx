@@ -80,7 +80,7 @@ export function About() {
             href="mailto:info@mateshop.com"/*CAMBIAR REFERENCIA*/
             className="inline-block bg-white text-green-700 px-8 py-3 rounded-lg hover:bg-green-50 transition-colors text-lg"
           >
-            info@mateshop.com
+            infoo@mateshop.com
           </a>
         </div>
       </section>
