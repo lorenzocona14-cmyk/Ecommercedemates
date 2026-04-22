@@ -9,10 +9,10 @@ export function Layout() {
       <main>
         <Outlet />
       </main>
-      <footer className="bg-green-800 text-white py-8 mt-16">
+      <footer className="bg-[#c7e47d] text-[#4a5f2f] py-8 mt-16">
         <div className="container mx-auto px-4 text-center">
           <p className="text-lg mb-2">🧉 Mates Aconcagua - La tradición en tus manos</p>
-          <p className="text-sm text-green-200">
+          <p className="text-sm text-[#6b8e3d]">
             © 2026 Mates Aconcagua. Todos los derechos reservados.
           </p>
         </div>

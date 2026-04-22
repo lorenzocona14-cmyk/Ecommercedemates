@@ -19,7 +19,7 @@ export function CartItemComponent({ item }: CartItemComponentProps) {
       <div className="flex-1">
         <h3 className="font-semibold">{item.name}</h3>
         <p className="text-sm text-gray-600">{item.description}</p>
-        <p className="text-green-700 font-semibold mt-1">
+        <p className="text-[#6b8e3d] font-semibold mt-1">
           ${item.price.toLocaleString('es-AR')}
         </p>
       </div>

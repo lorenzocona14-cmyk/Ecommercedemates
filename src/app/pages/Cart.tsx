@@ -42,7 +42,7 @@ export function Cart() {
           </p>
           <Link
             to="/tienda"
-            className="inline-block bg-green-700 text-white px-8 py-3 rounded-lg hover:bg-green-600 transition-colors"
+            className="inline-block bg-[#c7e47d] text-[#4a5f2f] px-8 py-3 rounded-lg hover:bg-[#b8d66e] transition-colors"
           >
             Ir a la Tienda
           </Link>
@@ -100,7 +100,7 @@ export function Cart() {
                     ${totalPrice.toLocaleString('es-AR')}
                   </span>
                 </div>
-                <div className="flex justify-between text-lg text-green-600">
+                <div className="flex justify-between text-lg text-[#b8d66e]">
                   <span>Envío:</span>
                   <span className="font-semibold">Gratis</span>
                 </div>
@@ -109,7 +109,7 @@ export function Cart() {
               <div className="border-t pt-4 mb-6">
                 <div className="flex justify-between text-2xl">
                   <span>Total:</span>
-                  <span className="font-semibold text-green-700">
+                  <span className="font-semibold text-[#6b8e3d]">
                     ${totalPrice.toLocaleString('es-AR')}
                   </span>
                 </div>
@@ -130,14 +130,14 @@ export function Cart() {
               <button
                 onClick={handleCheckout}
                 disabled={isProcessing}
-                className="w-full bg-green-700 text-white py-3 rounded-lg hover:bg-green-600 transition-colors text-lg disabled:opacity-50 disabled:cursor-not-allowed"
+                className="w-full bg-[#c7e47d] text-[#4a5f2f] py-3 rounded-lg hover:bg-[#b8d66e] transition-colors text-lg disabled:opacity-50 disabled:cursor-not-allowed"
               >
                 {isProcessing ? 'Procesando...' : 'Finalizar Compra'}
               </button>
 
               <Link
                 to="/tienda"
-                className="block text-center mt-4 text-green-700 hover:text-green-600 transition-colors"
+                className="block text-center mt-4 text-[#6b8e3d] hover:text-[#a8c95f] transition-colors"
               >
                 Seguir Comprando
               </Link>

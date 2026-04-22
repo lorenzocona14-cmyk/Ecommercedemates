@@ -30,7 +30,7 @@ export function Login() {
     <div className="min-h-screen bg-gray-50 flex items-center justify-center py-12 px-4">
       <div className="max-w-md w-full">
         <div className="text-center mb-8">
-          <div className="inline-flex items-center justify-center w-16 h-16 bg-green-700 text-white rounded-full mb-4">
+          <div className="inline-flex items-center justify-center w-16 h-16 bg-[#c7e47d] text-[#4a5f2f] rounded-full mb-4">
             <LogIn className="w-8 h-8" />
           </div>
           <h2 className="text-3xl font-bold">Iniciar Sesión</h2>
@@ -55,7 +55,7 @@ export function Login() {
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
                 required
-                className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-green-500"
+                className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#c7e47d]"
                 placeholder="tu@email.com"
               />
             </div>
@@ -70,7 +70,7 @@ export function Login() {
                 value={password}
                 onChange={(e) => setPassword(e.target.value)}
                 required
-                className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-green-500"
+                className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#c7e47d]"
                 placeholder="••••••••"
               />
             </div>
@@ -78,7 +78,7 @@ export function Login() {
             <button
               type="submit"
               disabled={loading}
-              className="w-full bg-green-700 text-white py-3 rounded-lg hover:bg-green-600 transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
+              className="w-full bg-[#c7e47d] text-[#4a5f2f] py-3 rounded-lg hover:bg-[#b8d66e] transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
             >
               {loading ? 'Iniciando sesión...' : 'Iniciar Sesión'}
             </button>
@@ -86,7 +86,7 @@ export function Login() {
 
           <p className="mt-6 text-center text-gray-600">
             ¿No tenés cuenta?{' '}
-            <Link to="/registro" className="text-green-700 hover:text-green-600 font-semibold">
+            <Link to="/registro" className="text-[#6b8e3d] hover:text-[#a8c95f] font-semibold">
               Registrate aquí
             </Link>
           </p>

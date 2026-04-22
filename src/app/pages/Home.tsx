@@ -1,30 +1,111 @@
 import { Link } from 'react-router';
 import { ProductCard } from '../components/ProductCard';
 import { products } from '../data/products';
-import { ArrowRight } from 'lucide-react';
+import { ArrowRight, ChevronLeft, ChevronRight } from 'lucide-react';
+import Slider from 'react-slick';
+import 'slick-carousel/slick/slick.css';
+import 'slick-carousel/slick/slick-theme.css';
 
 export function Home() {
   const featuredProducts = products.slice(0, 3);
 
+  const carouselImages = [
+    'https://acdn-us.mitiendanube.com/stores/007/009/693/themes/rio/2-slide-1767966765442-5481418450-443a8c58dcedd3f0d95ccb529efbd2c21767966768-1920-1920.webp?189805211350344595',
+    'https://acdn-us.mitiendanube.com/stores/002/027/172/themes/new_linkedman/2-slide-1765303427875-7520504997-4dbcccbe58c186427f6c688d13dc1d701765303429-1920-1920.webp?1900152006387381557',
+    'https://acdn-us.mitiendanube.com/stores/002/027/172/themes/new_linkedman/2-slide-1765303427875-3455558586-2def44c5c6dc5f06bc327b37fb55436e1765303430-1920-1920.webp?1900152006387381557',
+    'https://acdn-us.mitiendanube.com/stores/002/027/172/themes/new_linkedman/2-slide-1725907542775-7740745015-34bf43e2884e9a18a3d1513f99bfdf6e1725907557-1920-1920.webp?1900152006387381557'
+  ];
+
+  const NextArrow = (props: any) => {
+    const { onClick } = props;
+    return (
+      <button
+        onClick={onClick}
+        className="absolute right-4 top-1/2 -translate-y-1/2 z-10 bg-white/80 hover:bg-white text-[#6b8e3d] p-3 rounded-full shadow-lg transition-all hover:scale-110"
+        aria-label="Siguiente"
+      >
+        <ChevronRight className="w-6 h-6" />
+      </button>
+    );
+  };
+
+  const PrevArrow = (props: any) => {
+    const { onClick } = props;
+    return (
+      <button
+        onClick={onClick}
+        className="absolute left-4 top-1/2 -translate-y-1/2 z-10 bg-white/80 hover:bg-white text-[#6b8e3d] p-3 rounded-full shadow-lg transition-all hover:scale-110"
+        aria-label="Anterior"
+      >
+        <ChevronLeft className="w-6 h-6" />
+      </button>
+    );
+  };
+
+  const sliderSettings = {
+    dots: true,
+    infinite: true,
+    speed: 800,
+    slidesToShow: 1,
+    slidesToScroll: 1,
+    autoplay: true,
+    autoplaySpeed: 4000,
+    fade: true,
+    cssEase: 'cubic-bezier(0.4, 0, 0.2, 1)',
+    nextArrow: <NextArrow />,
+    prevArrow: <PrevArrow />,
+    dotsClass: 'slick-dots !bottom-6',
+    appendDots: (dots: any) => (
+      <ul className="flex justify-center gap-2">
+        {dots.map((dot: any, index: number) => (
+          <li key={index} className={dot.props.className}>
+            {dot.props.children}
+          </li>
+        ))}
+      </ul>
+    ),
+    customPaging: () => (
+      <button className="w-3 h-3 rounded-full bg-white/60 hover:bg-white transition-all" />
+    ),
+  };
+
   return (
     <div>
-      {/* Hero Section */}
-      <section className="bg-gradient-to-r from-green-700 to-green-900 text-white py-20">
-        <div className="container mx-auto px-4 text-center">
-          <h1 className="text-5xl md:text-6xl mb-6">
-            Bienvenido a Mates Aconcagua
-          </h1>
-          <p className="text-xl md:text-2xl mb-8 max-w-2xl mx-auto">
-            Los mejores mates, bombillas y accesorios para disfrutar de tu tradición favorita
-          </p>
-          <Link
-            to="/tienda"
-            className="inline-flex items-center gap-2 bg-white text-green-800 px-8 py-3 rounded-lg text-lg hover:bg-green-50 transition-colors"
-          >
-            Ver Catálogo
-            <ArrowRight className="w-5 h-5" />
-          </Link>
-        </div>
+      {/* Hero Carousel Section */}
+      <section className="relative w-full">
+        <style>{`
+          .slick-slider {
+            width: 100%;
+          }
+          .slick-list,
+          .slick-track {
+            width: 100%;
+          }
+          .slick-slide > div {
+            width: 100%;
+          }
+          .slick-dots li button:before {
+            display: none;
+          }
+          .slick-dots li.slick-active button {
+            background-color: white;
+            transform: scale(1.3);
+          }
+        `}</style>
+        <Slider {...sliderSettings}>
+          {carouselImages.map((image, index) => (
+            <div key={index} className="relative">
+              <div className="w-full h-[300px] sm:h-[400px] md:h-[500px] lg:h-[600px] bg-gray-100">
+                <img
+                  src={image}
+                  alt={`Slide ${index + 1} - Mates Aconcagua`}
+                  className="w-full h-full object-contain"
+                  style={{ objectPosition: 'center' }}
+                />
+              </div>
+            </div>
+          ))}
+        </Slider>
       </section>
 
       {/* Featured Products */}
@@ -41,7 +122,7 @@ export function Home() {
           <div className="text-center">
             <Link
               to="/tienda"
-              className="inline-flex items-center gap-2 bg-green-700 text-white px-6 py-3 rounded-lg hover:bg-green-600 transition-colors"
+              className="inline-flex items-center gap-2 bg-[#c7e47d] text-[#4a5f2f] px-6 py-3 rounded-lg hover:bg-[#b8d66e] transition-colors"
             >
               Ver Todos los Productos
               <ArrowRight className="w-5 h-5" />

@@ -69,7 +69,7 @@ export function Orders() {
           </p>
           <Link
             to="/tienda"
-            className="inline-block bg-green-700 text-white px-8 py-3 rounded-lg hover:bg-green-600 transition-colors"
+            className="inline-block bg-[#c7e47d] text-[#4a5f2f] px-8 py-3 rounded-lg hover:bg-[#b8d66e] transition-colors"
           >
             Ir a la Tienda
           </Link>
@@ -89,7 +89,7 @@ export function Orders() {
               <div className="flex items-start justify-between mb-4">
                 <div>
                   <div className="flex items-center gap-3 mb-2">
-                    <Package className="w-5 h-5 text-green-700" />
+                    <Package className="w-5 h-5 text-[#c7e47d]" />
                     <h3 className="font-semibold text-lg">
                       Pedido #{order.id.slice(0, 8)}
                     </h3>
@@ -104,7 +104,7 @@ export function Orders() {
                     })}
                   </p>
                 </div>
-                <span className="bg-green-100 text-green-800 px-3 py-1 rounded-full text-sm">
+                <span className="bg-[#c7e47d]/20 text-[#6b8e3d] px-3 py-1 rounded-full text-sm">
                   {order.status === 'completed' ? 'Completado' : order.status}
                 </span>
               </div>
@@ -127,7 +127,7 @@ export function Orders() {
 
               <div className="border-t mt-4 pt-4 flex justify-between items-center">
                 <span className="text-lg font-semibold">Total:</span>
-                <span className="text-2xl font-bold text-green-700">
+                <span className="text-2xl font-bold text-[#c7e47d]">
                   ${order.total.toLocaleString('es-AR')}
                 </span>
               </div>
